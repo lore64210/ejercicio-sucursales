@@ -34,6 +34,19 @@ usando Mongo Compass por fuera del Docker, se puede hacer desde el puerto 27016
 - Deploy: Docker/ docker-compose
 - Arquitectura: Arquitectura de 3 capas con Domain Driven Development(ver carpeta diagramas)
 
+##### Dependencias
+
+- Spring boot starter data MongoDB
+- Spring boot starter web
+- Spring boot starter actuator
+- Spring boot starter test
+- Kotlin reflect
+- Kotlin stdlib
+- Spring boot gradle plugin
+- Springdoc openapi ui
+- flapdoodle embed mongo (para testear en una base embebida)
+
+
 ### Endpoints
 
 La aplicacion corre en el puerto 8080.
