@@ -32,6 +32,7 @@ usando Mongo Compass por fuera del Docker, se puede hacer desde el puerto 27016
 - Base de datos: MongoDB
 - Build: Gradle
 - Deploy: Docker/ docker-compose
+- Arquitectura: Arquitectura de 3 capas con Domain Driven Development(ver carpeta diagramas)
 
 ### Endpoints
 
