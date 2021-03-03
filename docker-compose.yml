@@ -1,0 +1,30 @@
+version: "3"
+services:
+  api-database:
+    image: mongo:4.1.1
+    container_name: "api-database"
+    hostname: "api-database"
+    ports:
+      - 27016:27017
+    volumes:
+      - /home/user/data/db:/data/db
+    networks:
+      - main-network
+    command: ["--bind_ip", "0.0.0.0"]
+  api:
+    build:
+      context: ./
+    ports:
+      - 127.0.0.1:8080:8080
+    links:
+      - api-database
+    depends_on:
+      - api-database
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dockercompose"
+    networks:
+      - main-network
+networks:
+  main-network:
+    external:
+      name: "main-network"
