@@ -14,6 +14,12 @@ Desde el inicio de la ruta del proyecto (a la altura del archivo Dockerfile) eje
 2. docker build -t <nombre-de-la-imagen> .
 3. docker run -e "SPRING_PROFILES_ACTIVE=docker" -p 8080:8080 <nombre-de-la-imagen>
 
+####### Limpieza de docker
+4. docker ps
+5. docker stop <id del proceso> && docker rm <id del proceso>
+6. docker images
+7. docker rmi <id de la imagen> 
+
 #### Con Docker Compose, creando tanto el servicio como la base de datos en contenedores.
 
 Desde el inicio de la ruta del proyecto (a la altura del archivo Dockerfile) ejecutar:
@@ -21,6 +27,10 @@ Desde el inicio de la ruta del proyecto (a la altura del archivo Dockerfile) eje
 1. gradlew clean build
 2- docker network create main-network
 3. docker-compose up -d (-d para correr la aplicacion en segundo plano, quitar para ver los logs)
+
+####### Limpieza de docker
+4. docker images
+5. docker rmi <id de la imagen> 
 
 Nota: La aplicacion se conecta por la red creada por docker a la base de datos usando el puerto 27017, pero si se quiere observar la base de datos
 usando Mongo Compass por fuera del Docker, se puede hacer desde el puerto 27016
